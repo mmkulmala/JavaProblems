@@ -112,4 +112,23 @@ public class ProblemAndSolutionsTest {
         assertEquals(120,problems.factIterative(5));
     }
     
+    /**
+     * Test to replace given character with another in a String
+     */
+    @Test
+    public void testReplacer() {
+        String replacedString = "Sbarb";
+        String str = "Start";
+        char ch = 't';
+        char replacer = 'b';
+        assertEquals(replacedString, problems.replace(str, ch, replacer));
+    }
+    
+    /**
+     * Test for printing a * pyramid
+     */
+    @Test
+    public void testPrintingAStructure() {
+        problems.printStructure(5);
+    }
 }

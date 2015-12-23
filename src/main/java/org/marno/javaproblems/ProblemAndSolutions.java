@@ -2,7 +2,7 @@ package org.marno.javaproblems;
 
 /**
  * Holds some usual Java interview problems and their possible solutions
- * 
+ *
  * @author Marno Kulmala
  */
 public class ProblemAndSolutions {
@@ -91,8 +91,9 @@ public class ProblemAndSolutions {
 
     /**
      * String reverse without StringBuilder or StringBuffer
+     *
      * @param source
-     * @return 
+     * @return
      */
     public static String reverse(String source) {
         if (source == null || source.isEmpty()) {
@@ -131,14 +132,50 @@ public class ProblemAndSolutions {
 
         return result;
     }
-    
+
     /**
      * Print a * pyramid to
+     *
      * @TODO: fix this
      * @param size
-     * @return 
      */
-    public static String printStructure(int size) {
-        return " ";
+    public static void printStructure(int size) {
+        
+        StringBuilder printedString = new StringBuilder();
+        int i = 0;
+        for(i = 1; i <= size; i++) {
+            printedString.append('*');
+            System.out.println(printedString.toString());
+        }
+        
+        int j = size;
+        while(j >= 1) {
+            j--;
+            printedString.deleteCharAt(j);
+            System.out.println(printedString.toString());
+        }
+        
+    }
+
+    /**
+     * Replace a character in String. Takes the string, characters to placed and
+     * replacing character. For example str would be "Start", ch would be 't' and
+     * replacer would be 'b' - returned value would be "Sbarb"
+     * 
+     * @param str
+     * @param ch
+     * @param replacer
+     * @return String with characters replaced
+     */
+    public static String replace(String str, char ch, char replacer) {
+        String temp = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (ch == str.charAt(i)) {
+                temp += replacer;
+            } else {
+                temp += str.charAt(i);
+            }
+        }
+        return temp;
     }
 }
