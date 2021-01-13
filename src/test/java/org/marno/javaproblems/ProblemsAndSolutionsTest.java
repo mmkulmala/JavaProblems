@@ -9,18 +9,39 @@ import static org.junit.Assert.*;
  *
  * @author Marno Kulmala
  */
-public class ProblemAndSolutionsTest {
+public class ProblemsAndSolutionsTest {
     
-    private ProblemAndSolutions problems;
+    private ProblemsAndSolutions problems;
     
     @Before
     public void setUp() {
-        problems = new ProblemAndSolutions();
+        problems = new ProblemsAndSolutions();
     }
     
     @After
     public void tearDown() {
         problems = null;
+    }
+
+    /** palindrome tests */
+    @Test
+    public void testMaamIsPalindrome() {
+        assertTrue(ProblemsAndSolutions.isGivenStringPalindrome("maam"));
+    }
+
+    @Test
+    public void testMamaIsNotPalindrome() {
+        assertFalse(ProblemsAndSolutions.isGivenStringPalindrome("mama"));
+    }
+
+    @Test
+    public void test122IsNotPalindrome() {
+        assertFalse(ProblemsAndSolutions.isGivenNumberPalindrome(122));
+    }
+
+    @Test
+    public void test101IsPalindrome() {
+        assertTrue(ProblemsAndSolutions.isGivenNumberPalindrome(101));
     }
 
     /**
@@ -121,7 +142,7 @@ public class ProblemAndSolutionsTest {
         String str = "Start";
         char ch = 't';
         char replacer = 'b';
-        assertEquals(replacedString, problems.replace(str, ch, replacer));
+        assertEquals(replacedString, ProblemsAndSolutions.replace(str, ch, replacer));
     }
     
     /**
@@ -129,6 +150,6 @@ public class ProblemAndSolutionsTest {
      */
     @Test
     public void testPrintingAStructure() {
-        problems.printStructure(5);
+        ProblemsAndSolutions.printStructure(5);
     }
 }

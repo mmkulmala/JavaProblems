@@ -5,7 +5,55 @@ package org.marno.javaproblems;
  *
  * @author Marno Kulmala
  */
-public class ProblemAndSolutions {
+public class ProblemsAndSolutions {
+
+    /**
+     * Palindrome method for String
+     *
+     * @param original
+     * @return
+     */
+    public static boolean isGivenStringPalindrome(String original) {
+        boolean isPal = false;
+        String reverse = "";
+
+        int length = original.length();
+
+        for (int i = length - 1; i >= 0; i--) {
+            reverse = reverse + original.charAt(i);
+        }
+
+        if (original.equals(reverse)) {
+            isPal = true;
+        }
+
+        return isPal;
+    }
+
+    /**
+     * Palindrome method for number
+     *
+     * @param number
+     * @return
+     */
+    public static boolean isGivenNumberPalindrome(int number) {
+        boolean isPal = false;
+
+        int palindrome = number;
+        int reverse = 0;
+
+        while (palindrome != 0) {
+            int remainder = palindrome % 10;
+            reverse = reverse * 10 + remainder;
+            palindrome = palindrome / 10;
+        }
+
+        if (number == reverse) {
+            isPal = true;
+        }
+
+        return isPal;
+    }
 
     /**
      * Recursive fibonacci
